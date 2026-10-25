@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
 
 :root {
     --paper: #f5f4ee;
@@ -849,5 +850,227 @@ h2 {
 
     * {
         transition: none !important
+    }
+}
+
+
+
+/* ========================================
+   Akram's work: Services + Footer
+   ======================================== */
+
+/* Services section */
+.services {
+    padding-block: 85px;
+}
+
+.services .section-top h2 {
+    max-width: 520px;
+    font-size: clamp(32px, 4vw, 42px);
+    line-height: 1.2;
+}
+
+.services .section-top > p {
+    max-width: 330px;
+}
+
+.service-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.22);
+}
+
+.service {
+    min-width: 0;
+    padding: 30px 27px;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.25s ease,
+                transform 0.25s ease;
+}
+
+.service:hover {
+    background-color: #eeefe7;
+}
+
+.service + .service {
+    border-left: 1px solid var(--line);
+}
+
+.service-top {
+    margin-bottom: 32px;
+}
+
+.service-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    color: var(--orange);
+}
+
+.service h3 {
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 14px;
+}
+
+.service > p {
+    flex-grow: 1;
+    font-size: 13px;
+    line-height: 1.85;
+}
+
+.tags {
+    margin-top: auto;
+    gap: 8px;
+}
+
+.tags span {
+    padding: 6px 10px;
+    font-size: 10px;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Footer section */
+.footer {
+    margin-top: 35px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding-block: 32px;
+}
+
+.footer .brand {
+    flex-shrink: 0;
+}
+
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 22px;
+    font-size: 12px;
+}
+
+.footer-nav a,
+.footer-copyright a,
+.back-to-top {
+    transition: color 0.2s ease;
+}
+
+.footer-nav a:hover,
+.footer-copyright a:hover,
+.back-to-top:hover {
+    color: var(--orange);
+}
+
+.footer .footer-copyright {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+.footer .footer-copyright span {
+    color: var(--muted);
+}
+
+.back-to-top {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+/* Responsive layout for Services + Footer */
+@media (max-width: 900px) {
+    .service {
+        padding: 25px 20px;
+    }
+
+    .service h3 {
+        font-size: 18px;
+    }
+
+    .footer {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 720px) {
+    .services {
+        padding-block: 45px;
+    }
+
+    .services .section-top {
+        display: block;
+        margin-bottom: 25px;
+    }
+
+    .services .section-top h2 {
+        font-size: 33px;
+    }
+
+    .services .section-top > p {
+        margin-top: 18px;
+        font-size: 12px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service {
+        padding: 25px;
+    }
+
+    .service + .service {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+    }
+
+    .service-top {
+        margin-bottom: 20px;
+    }
+
+    .service h3 {
+        font-size: 22px;
+    }
+
+    .service > p {
+        font-size: 14px;
+    }
+
+    .footer {
+        align-items: flex-start;
+    }
+
+    .footer-nav {
+        order: 3;
+        width: 100%;
+        gap: 18px;
+    }
+
+    .footer .footer-copyright {
+        order: 4;
+        width: 100%;
+    }
+
+    .back-to-top {
+        margin-left: auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .service,
+    .footer-nav a,
+    .footer-copyright a,
+    .back-to-top {
+        transition: none;
     }
 }
